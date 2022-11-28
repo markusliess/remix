@@ -22,6 +22,12 @@
                 // PARSE JSON DATA.
                 let cards = JSON.parse(xhr.responseText);
 
+                cards =cards.sort((a,b)=>{
+                    if(a.Name < b.Name) {
+                        return -1;
+                    }
+                })
+
                 let ele = document.getElementById('sel');
                 for (let i = 0; i < cards.length; i++) {
                     // BIND DATA TO <select> ELEMENT.
